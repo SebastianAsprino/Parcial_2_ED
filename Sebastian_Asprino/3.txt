@@ -1,0 +1,22 @@
+para eso asumiendo que ya tengo hecho el metodo para recorrer la lista circular 
+le diria al usuario que digitara el valor que desea eliminar 
+luego con un ejecutar comparar el valor con lista.data, si es igual llamo a la linkedlist para eliminar ese nodo
+usando el sgt codigo
+    def eliminar_nodo(self, data):
+        ## eliminar el nodo 
+        if self.vacio():
+            return
+        elif data == self.PTR.data:
+            nodito = self.PTR
+            while nodito.next != self.PTR:
+                nodito = nodito.next
+            nodito.next = self.PTR.next
+            self.PTR = self.PTR.next
+        else:
+            nodito = self.PTR
+            pre= None
+            while nodito.data != data:
+                pre = nodito
+                nodito = nodito.next
+            pre.next = nodito.next
+y con esto elimino todas las ocurrencias de un valor en una lista enlazada circular. 
